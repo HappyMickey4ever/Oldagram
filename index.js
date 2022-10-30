@@ -1,12 +1,11 @@
-const nameEl = document.getElementById("name")
-const userNameEl = document.getElementById("user-name")
-const locationEl = document.getElementById("location")
-const avatarEl = document.getElementById("avatar")
-const postEl = document.getElementById("post")
-const commentEl = document.getElementById("comment")
-const likesEl = document.getElementById("likes")
-const likeBtnEl = document.getElementById("like-btn")
-
+	const nameEl = document.getElementById("name")
+    const userNameEl = document.getElementById("user-name")
+    const locationEl = document.getElementById("location")
+    const avatarEl = document.getElementById("avatar")
+    const postEl = document.getElementById("post")
+    const commentEl = document.getElementById("comment")
+    const likesEl = document.getElementById("likes")
+    const likeBtnEl = document.getElementById("like-btn")
 const posts = [
     {
         name: "Vincent van Gogh",
@@ -17,10 +16,7 @@ const posts = [
         comment: "just took a few mushrooms lol",
         likes: 21
     }
-]
-
-const posts2 = [
-    {
+,{
         name: "Gustave Courbet",
         username: "gus1819",
         location: "Ornans, France",
@@ -42,39 +38,20 @@ const posts2 = [
 
 
 for (let i = 0; i < posts.length; i++){
-    nameEl.innerHTML = 
-    `
-        ${posts[i].name}
-    `
-    userNameEl.innerHTML = 
-    `
-        ${posts[i].username}
-    `
-
-    locationEl.innerHTML = 
-    `
-        ${posts[i].location}
-    `
-
-    avatarEl.src = 
-    `
-        ${posts[i].avatar}
-    `
-
-    postEl.src = 
-    `
-        ${posts[i].post}
-    `
-
-    commentEl.innerHTML = 
-    `
-        ${posts[i].comment}
-    `
-
-    likesEl.innerHTML = 
-    `
-        ${posts[i].likes} 
-    `
+    nameEl.innerHTML = `${posts[i].name}`
+    userNameEl.innerHTML = `${posts[i].username}`
+    locationEl.innerHTML = `${posts[i].location}`
+    avatarEl.src = `${posts[i].avatar}`
+    postEl.src = `${posts[i].post}`
+    commentEl.innerHTML = `${posts[i].comment}`
+    likesEl.innerHTML = `${posts[i].likes}`
+    var elem = document.querySelector('#general');
+    var clone = elem.cloneNode(true);
+    clone.id = 'general'+i;
+	if (i != posts.length-1) {
+		elem.after(clone);
+	}
+    
 }
 
 likeBtnEl.addEventListener("dblclick", function(){
